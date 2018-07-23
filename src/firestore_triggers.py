@@ -33,7 +33,7 @@ def update_closed_task_count(event, context):
     return True
 
 
-def update_project_on_task_deletion_python(event, context):
+def update_project_on_task_deletion(event, context):
     # get old task status
     task_status = get_old_task_status(event)
 
