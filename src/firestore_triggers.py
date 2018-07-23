@@ -40,7 +40,7 @@ def update_project_on_task_deletion(event, context):
     project_ref = prepare_project_reference(event, context)
 
     # update the count using transaction
-    transaction = FIRESTORE_CLIENT.transaction()
+    transaction = get_transaction_obj()
     update_project_status_in_transaction(transaction, project_ref, task_status)
 
     return True
