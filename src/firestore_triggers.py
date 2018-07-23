@@ -1,8 +1,7 @@
-from src.helpers import get_project_id, get_project_path, get_old_task_status, get_new_task_status, \
-    get_project_id_on_deletion, prepare_project_reference, get_transaction_obj
+from src.helpers import get_old_task_status, get_new_task_status, prepare_project_reference, get_transaction_obj
 from .configuration import FIRESTORE_CLIENT
-from .transactions import update_task_count_in_transaction, \
-    update_closed_task_count_in_transaction, update_project_status_in_transaction
+from .transactions import update_task_count_in_transaction, update_closed_task_count_in_transaction, \
+    update_project_status_in_transaction
 
 
 def update_task_count(event, context):
