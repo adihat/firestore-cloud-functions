@@ -1,4 +1,4 @@
-from src.helpers import get_old_task_status, get_new_task_status, prepare_project_reference, get_transaction_obj
+from .helpers import get_old_task_status, get_new_task_status, prepare_project_reference, get_transaction_obj
 from .configuration import FIRESTORE_CLIENT
 from .transactions import update_task_count_in_transaction, update_closed_task_count_in_transaction, \
     update_project_status_in_transaction
