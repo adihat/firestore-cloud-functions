@@ -1,4 +1,4 @@
-# Firestore cloud functions 
+# Firestore cloud functions (Python 3.7 Runtime)
 
 
 
@@ -107,3 +107,11 @@ More info: https://firebase.google.com/docs/firestore/extend-with-functions
 7. select source code type (inline editor/zip)
 8. Select runtime as python 3.7
 9. Provide the entry point i.e the function to start execution.
+
+**Note**: 
+1. Add firebase-admin==2.11.0 in requirements.txt file.   
+2. print() statements are added for logging. You can check out the logs from the firebase console
+
+
+Refer my stack overflow answer for screenshots:  
+https://stackoverflow.com/questions/48772583/python-in-google-cloud-functions/51466795#51466795
