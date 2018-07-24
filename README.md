@@ -109,8 +109,7 @@ More info: https://firebase.google.com/docs/firestore/extend-with-functions
 9. Provide the entry point i.e the function to start execution.
 
 **Note**: 
-1. Add firebase-admin==2.11.0 in requirements.txt file.   
-2. print() statements are added for logging. You can check out the logs from the firebase console
+1. Add firebase-admin==2.11.0 in requirements.txt file
 
 
 Refer my stack overflow answer for screenshots:  
