@@ -1,4 +1,4 @@
-from src.configuration import FIRESTORE_CLIENT
+from .configuration import FIRESTORE_CLIENT
 
 
 def get_project_id(event):
