@@ -15,6 +15,9 @@ def update_task_count_in_transaction(transaction, project_ref):
 @firestore.transactional
 def update_closed_task_count_in_transaction(transaction, project_ref, old_status, new_status):
     doc_ref = FIRESTORE_CLIENT.document(project_ref)
+    
+    # get the document
+    project = doc_ref.get().to_dict()
 
     if old_status == 'open' and new_status == 'closed':
         snapshot = doc_ref.get(transaction=transaction)
@@ -22,10 +25,11 @@ def update_closed_task_count_in_transaction(transaction, project_ref, old_status
             u'closedTaskCount': snapshot.get(u'closedTaskCount') + 1
         })
     elif old_status == 'closed' and new_status == 'open':
-        snapshot = doc_ref.get(transaction=transaction)
-        transaction.update(doc_ref, {
-            u'closedTaskCount': snapshot.get(u'closedTaskCount') - 1
-        })
+        if project['closedTaskCount'] > 0:
+            snapshot = doc_ref.get(transaction=transaction)
+            transaction.update(doc_ref, {
+                u'closedTaskCount': snapshot.get(u'closedTaskCount') - 1
+            })
     else:
         print('didnt match any condition')
 
